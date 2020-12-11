@@ -2,7 +2,7 @@
   "name": "gallery-front",
   "version": "0.0.0",
   "scripts": {
-    "hheroku-postbuild": "ng build",
+    "heroku-postbuild": "ng build",
     "ng": "ng",
     "startt": "ng serve",
     "start": "node server.js",

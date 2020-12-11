@@ -126,7 +126,7 @@ class AuthService {
             country: addOrder.country,
             checklist: addOrder.checklist,
             comments: addOrder.comments,
-            contributor: addOrder.contributor
+            contributor: sessionStorage.getItem('user')
         };
         return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiEndpoint + 'order/create', data);
     }
@@ -141,8 +141,7 @@ class AuthService {
             province: addOrder.province,
             country: addOrder.country,
             checklist: addOrder.checklist,
-            comments: addOrder.comments,
-            contributor: addOrder.contributor
+            comments: addOrder.comments
         };
         return this.http.patch(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiEndpoint + 'order/' + addOrder.id, data);
     }

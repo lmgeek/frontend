@@ -656,7 +656,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    apiEndpoint: "http://localhost:8081/",
+    apiEndpoint: "https://gallerybackend.herokuapp.com/",
     credentialsAppUser: "2",
     credentialsAppPassword: "OHN3i5B9sygglFkPxwSK8spX8Cm23A8HwVjnFEKo",
     mapbox: {
@@ -986,13 +986,13 @@ ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineC
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "profile works!");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */"] });
+    } }, encapsulation: 2 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ProfileComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 selector: 'app-profile',
                 templateUrl: './profile.component.html',
-                styleUrls: ['./profile.component.css']
+                styleUrls: []
             }]
     }], function () { return []; }, null); })();
 
@@ -1973,6 +1973,7 @@ const routes = [
     { path: 'users', loadChildren: () => Promise.all(/*! import() | pages-users-users-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-users-users-module")]).then(__webpack_require__.bind(null, /*! ./pages/users/users.module */ "+P1L")).then(m => m.UsersModule) },
     { path: 'typeupload', loadChildren: () => Promise.all(/*! import() | pages-typeuploads-typeuploads-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-typeuploads-typeuploads-module")]).then(__webpack_require__.bind(null, /*! ./pages/typeuploads/typeuploads.module */ "G45u")).then(m => m.TypeUploadsModule) },
     { path: 'orders', loadChildren: () => Promise.all(/*! import() | pages-orders-orders-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-orders-orders-module")]).then(__webpack_require__.bind(null, /*! ./pages/orders/orders.module */ "Xlj8")).then(m => m.OrdersModule) },
+    { path: 'myorders', loadChildren: () => Promise.all(/*! import() | pages-myorder-myorder-module */[__webpack_require__.e("default~pages-myorder-myorder-module~views-forms-forms-module"), __webpack_require__.e("common"), __webpack_require__.e("pages-myorder-myorder-module")]).then(__webpack_require__.bind(null, /*! ./pages/myorder/myorder.module */ "eRbX")).then(m => m.MyorderModule) },
     { path: '**', component: _views_pages_error_page_error_page_component__WEBPACK_IMPORTED_MODULE_3__["ErrorPageComponent"] }
 ];
 class AppRoutingModule {
