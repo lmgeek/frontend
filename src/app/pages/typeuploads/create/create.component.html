@@ -1,0 +1,42 @@
+<h1>Its works</h1>
+<app-loader></app-loader>
+
+<!-- Wrapper [START] -->
+<div class="wrapper">
+    <app-side-bar1></app-side-bar1>
+    <app-nav-bar1></app-nav-bar1>
+    <!--Content [START]-->
+    <div id="content-page" class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <app-iq-card>
+                        <div card-header class="iq-header-title">
+                            <h4 class="card-title">Create a new user</h4>
+                        </div>
+                        <form [formGroup]="form" class="form mt-4" (submit)="submit()">
+                            <div class="row" style="margin-bottom: 10px!">
+                                <div class="col">
+                                    <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                                </div>
+                                <div class="col">
+                                    <input type="description" formControlName="description" class="form-control" placeholder="Description">
+                                </div>
+                                <div class="col">
+                                    <input type="number" formControlName="min_upload" class="form-control" placeholder="Min Upload">
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+                            <button class="btn ml-1 iq-bg-danger">cancel</button>
+                        </form>
+                    </app-iq-card>
+                </div>
+            </div>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </div>
+    <!-- Content [END] -->
+</div>
+<!-- Wrapper [END] -->
+

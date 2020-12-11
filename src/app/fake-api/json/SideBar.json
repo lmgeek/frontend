@@ -1,0 +1,121 @@
+{
+	"data": [
+    {
+      "title": "Main",
+      "isHeading": true,
+      "isActive": false,
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-separator"
+    },
+    {
+      "title": "Home",
+      "isHeading": false,
+      "isActive": false,
+      "link": "/home",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-home-4-line"
+    },
+    {
+      "title": "Orders",
+      "name": "orders",
+      "isHeading": false,
+      "isActive": false,
+      "link": "",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-mail-open-line",
+      "children": [
+        {
+          "title": "Create Order",
+          "isActive": false,
+          "link": "/orders/create",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
+          "title": "List Orders",
+          "isActive": false,
+          "link": "/orders",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "title": "My Orders",
+      "isHeading": false,
+      "isActive": false,
+      "link": "/myorders",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-calendar-2-line"
+    },
+    {
+      "title": "Configurations",
+      "isHeading": true,
+      "isActive": false,
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-separator"
+    },
+    {
+      "title": "Users",
+      "name": "users",
+      "isHeading": false,
+      "isActive": false,
+      "link": "/",
+      "className": "",
+      "isIconClass": true,
+      "icon": "ri-home-4-line",
+      "children": [
+        {
+          "title": "Add New User",
+          "isActive": false,
+          "link": "/users/create",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },
+        {
+          "title": "List Users",
+          "isActive": false,
+          "link": "/users",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "title": "Type Uploads",
+      "name": "typeuploads",
+      "isHeading": false,
+      "isActive": false,
+      "className": "",
+      "link": "",
+      "isIconClass": true,
+      "icon": "ri-pencil-ruler-line",
+      "children": [
+        {
+          "title": "Create Type Upload",
+          "isActive": false,
+          "link": "/typeupload/create",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        },{
+          "title": "List Type Uploads",
+          "isActive": false,
+          "link": "/typeupload",
+          "className": "",
+          "isIconClass": false,
+          "icon": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+    <app-loader></app-loader>
+    
+    <!-- Wrapper [START] -->
+    <div class="wrapper">
+        <app-side-bar1></app-side-bar1>
+        <app-nav-bar1></app-nav-bar1>
+        <!--Content [START]-->
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        
+                        
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-12">
+                                <app-iq-card>
+                                    <div card-header class="iq-header-title">
+                                        <h4 class="card-title">typeuploads</h4>
+                                    </div>
+                                    <div id="table" class="table-editable">
+                                        <div class="d-block float-left mb-3 mr-2">
+                                            <div class="btn-group btn-group-md" role="group" aria-label="Basic example">
+                                                <button type="button"  class="btn btn-primary">
+                                                    <i class="ri-image-add-line"></i>
+                                                    <i class="ri-image-add-fill"></i>
+                                                    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                                                    New
+                                                </button>
+                                                <button type="button" class="btn btn-primary">
+                                                    <i class="ri-file-excel-2-line"></i>Export
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Right</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <span class="table-add float-right mb-3 mr-2">
+                                            <button type="button" class="btn btn-primary mb-3">
+                                                <i class="fa fa-plus-square fa-lg" >Add New</i>
+                                            </button>
+                                        </span>
+                                        
+                                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">Name</th>
+                                                    <th class="text-center">Description</th>
+                                                    <th class="text-center">Min Uploads</th>
+                                                    <th class="text-center">Sort</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let typeupload of typeuploads">
+                                                    <td class="pt-3-half" contenteditable="true">{{ typeupload.name }}</td>
+                                                    <td class="pt-3-half" contenteditable="true">{{ typeupload.description }}</td>
+                                                    <td class="pt-3-half" contenteditable="true">{{ typeupload.min_upload }}</td>
+                                                    <td class="pt-3-half">
+                                                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a></span>
+                                                        <span class="table-down"><a href="#!" class="indigo-text"><i class="fa fa-long-arrow-down" aria-hidden="true"></i></a></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="table-add">
+                                                            <a href="/typeupload/update/{{ typeupload.id }}" type="button" class="btn btn-primary btn-rounded btn-sm my-0">
+                                                                <i class="fa fa-eye"></i>
+                                                            </a>
+                                                        </span>
+                                                        <span class="table-editable">
+                                                            <a href="/typeupload/update/{{ typeupload.id }}" type="button" class="btn btn-success btn-rounded btn-sm my-0">
+                                                                <i class="fa fa-edit"></i>
+                                                            </a>
+                                                        </span>
+                                                        <span class="table-remove">
+                                                            <a href="#" type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <!-- This is our clonable table line -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </app-iq-card>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <!-- <router-outlet></router-outlet> -->
+            </div>
+        </div>
+        <!-- Content [END] -->
+    </div>
+    <!-- Wrapper [END] -->
+    
+    
+    

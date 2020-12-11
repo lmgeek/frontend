@@ -1,0 +1,76 @@
+<app-loader></app-loader>
+
+<!-- Wrapper [START] -->
+<div class="wrapper">
+    <app-side-bar1></app-side-bar1>
+    <app-nav-bar1></app-nav-bar1>
+    <!--Content [START]-->
+    <div id="content-page" class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <app-iq-card>
+                        <div card-header class="iq-header-title">
+                            <h4 class="card-title">Create a new order</h4>
+                        </div>
+                        <form [formGroup]="form" class="form mt-4" (submit)="submit()">
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="companyName" class="form-control" placeholder="Company Name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="referenceName" class="form-control" placeholder="Reference Name">
+                                </div>
+                            
+                                <div class="col">
+                                    <input type="text" formControlName="projectName" class="form-control" placeholder="projectName">
+                                </div>
+                                
+                                <div class="col">
+                                    <input type="text" formControlName="address" class="form-control" placeholder="address">
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="zipcpode" class="form-control" placeholder="zipcpode">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="province" class="form-control" placeholder="province">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="country" class="form-control" placeholder="country">
+                                </div>
+                                <div class="col">
+                                    <!-- <input type="text" formControlName="checklist" class="form-control" placeholder="checklist"> -->
+                                    <div class="custom-control custom-switch custom-control-inline">
+                                        <input type="checkbox" class="custom-control-input" id="checklist" checked="" formControlName="checklist">
+                                        <label class="custom-control-label" for="checklist">Checklist</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="contributor" class="form-control" placeholder="contributor">
+                                </div>
+                            </div> -->
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <textarea formControlName="comments"  class="form-control" id="" cols="10" rows="10" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary">Submit</button>
+                            <button class="btn ml-1 iq-bg-danger">cancel</button>
+                        </form>
+                    </app-iq-card>
+                </div>
+            </div>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </div>
+    <!-- Content [END] -->
+</div>
+<!-- Wrapper [END] -->
+
