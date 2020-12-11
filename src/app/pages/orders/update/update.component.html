@@ -16,54 +16,76 @@
                         <form [formGroup]="form" class="form mt-4" (submit)="submit()">
                             <div class="row" style="margin-bottom: 10px">
                                 <div class="col">
-                                    <input type="text" formControlName="companyName" [(ngModel)]="order.data.companyName" class="form-control" placeholder="Company Name">
+                                    <input type="text" formControlName="companyName" [(ngModel)]="order.orders.companyName" class="form-control" placeholder="Company Name">
                                 </div>
                                 <div class="col">
-                                    <input type="text" formControlName="referenceName" [(ngModel)]="order.data.referenceName" class="form-control" placeholder="Reference Name">
+                                    <input type="text" formControlName="referenceName" [(ngModel)]="order.orders.referenceName" class="form-control" placeholder="Reference Name">
                                 </div>
                             
                                 <div class="col">
-                                    <input type="text" formControlName="projectName" [(ngModel)]="order.data.projectName" class="form-control" placeholder="projectName">
+                                    <input type="text" formControlName="projectName" [(ngModel)]="order.orders.projectName" class="form-control" placeholder="projectName">
                                 </div>
                                 
                                 <div class="col">
-                                    <input type="text" formControlName="address" [(ngModel)]="order.data.address" class="form-control" placeholder="address">
+                                    <input type="text" formControlName="address" [(ngModel)]="order.orders.address" class="form-control" placeholder="address">
                                 </div>
                             </div>
 
                             <div class="row" style="margin-bottom: 10px">
                                 <div class="col">
-                                    <input type="text" formControlName="zipcpode" [(ngModel)]="order.data.zipcpode" class="form-control" placeholder="zipcpode">
+                                    <input type="text" formControlName="zipcode" [(ngModel)]="order.orders.zipcode" class="form-control" placeholder="zipcode">
                                 </div>
                                 <div class="col">
-                                    <input type="text" formControlName="province" [(ngModel)]="order.data.province" class="form-control" placeholder="province">
+                                    <input type="text" formControlName="province" [(ngModel)]="order.orders.province" class="form-control" placeholder="province">
                                 </div>
                                 <div class="col">
-                                    <input type="text" formControlName="country" [(ngModel)]="order.data.country" class="form-control" placeholder="country">
+                                    <input type="text" formControlName="country" [(ngModel)]="order.orders.country" class="form-control" placeholder="country">
                                 </div>
                                 <div class="col">
-                                    <input type="text" formControlName="checklist" [(ngModel)]="order.data.checklist" class="form-control" placeholder="checklist">
+                                    <input type="text" formControlName="checklist" [(ngModel)]="order.orders.checklist" class="form-control" placeholder="checklist">
                                 </div>
                             </div>
                             
                             <div class="row" style="margin-bottom: 10px">
                                 <div class="col">
-                                    <input type="text" formControlName="contributor" [(ngModel)]="order.data.contributor" class="form-control" placeholder="contributor">
+                                    <input type="text" formControlName="contributor" [(ngModel)]="order.orders.contributor" class="form-control" placeholder="contributor">
                                 </div>
                                 <div class="col">
-                                    <input type="text" formControlName="status" [(ngModel)]="order.data.status" class="form-control" placeholder="status">
+                                    <input type="text" formControlName="status" [(ngModel)]="order.orders.status" class="form-control" placeholder="status">
                                 </div>
                             </div>
                             <div class="row" style="margin-bottom: 10px">
                                 <div class="col">
-                                    <textarea formControlName="comments"  [(ngModel)]="order.data.comments" class="form-control" id="" cols="10" rows="10" placeholder="Comments"></textarea>
+                                    <textarea formControlName="comments"  [(ngModel)]="order.orders.comments" class="form-control" id="" cols="10" rows="10" placeholder="Comments"></textarea>
                                 </div>
+                            </div>
+                            <div class="row " style="margin-bottom: 10px;">
+                                    <label for="file">Upload to gallery</label>
+                                    <input 
+                                        formControlName="file"
+                                        id="file" 
+                                        type="file" 
+                                        class="form-control"
+                                        multiple="" 
+                                        (change)="onFileChange($event)">
+                               
+                                <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
                             </div>
                             <br>
                             <button class="btn btn-primary">Submit</button>
                             <button class="btn ml-1 iq-bg-danger">cancel</button>
                         </form>
                     </app-iq-card>
+
+                    <app-iq-card>
+                        <div card-header class="iq-header-title">
+                            <h4 class="card-title">Gallery</h4>
+                        </div>
+                        
+                        <img *ngFor="let image of order.images" src="{{image.image}}" class="img-thumbnail ml-3" alt="Responsive image" width="150">
+                    </app-iq-card>
+
+                    
                 </div>
             </div>
             <!-- <router-outlet></router-outlet> -->

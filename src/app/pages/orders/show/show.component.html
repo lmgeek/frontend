@@ -1,1 +1,75 @@
+<app-loader></app-loader>
+
+<!-- Wrapper [START] -->
+<div class="wrapper">
+    <app-side-bar1></app-side-bar1>
+    <app-nav-bar1></app-nav-bar1>
+    <!--Content [START]-->
+    <div id="content-page" class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <app-iq-card>
+                        <div card-header class="iq-header-title">
+                            <h4 class="card-title">Edit order</h4>
+                        </div>
+                        <form [formGroup]="form" class="form mt-4" (submit)="submit()">
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="companyName" [(ngModel)]="order.orders.companyName" class="form-control" placeholder="Company Name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="referenceName" [(ngModel)]="order.orders.referenceName" class="form-control" placeholder="Reference Name">
+                                </div>
+                            
+                                <div class="col">
+                                    <input type="text" formControlName="projectName" [(ngModel)]="order.orders.projectName" class="form-control" placeholder="projectName">
+                                </div>
+                                
+                                <div class="col">
+                                    <input type="text" formControlName="address" [(ngModel)]="order.orders.address" class="form-control" placeholder="address">
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="zipcode" [(ngModel)]="order.orders.zipcode" class="form-control" placeholder="zipcode">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="province" [(ngModel)]="order.orders.province" class="form-control" placeholder="province">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="country" [(ngModel)]="order.orders.country" class="form-control" placeholder="country">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="checklist" [(ngModel)]="order.orders.checklist" class="form-control" placeholder="checklist">
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <input type="text" formControlName="contributor" [(ngModel)]="order.orders.contributor" class="form-control" placeholder="contributor">
+                                </div>
+                                <div class="col">
+                                    <input type="text" formControlName="status" [(ngModel)]="order.orders.status" class="form-control" placeholder="status">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 10px">
+                                <div class="col">
+                                    <textarea formControlName="comments"  [(ngModel)]="order.orders.comments" class="form-control" id="" cols="10" rows="10" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary">Submit</button>
+                            <button class="btn ml-1 iq-bg-danger">cancel</button>
+                        </form>
+                    </app-iq-card>
+                </div>
+            </div>
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </div>
+    <!-- Content [END] -->
+</div>
+<!-- Wrapper [END] -->
 

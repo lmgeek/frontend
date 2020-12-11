@@ -25,8 +25,7 @@ export class ShowComponent implements OnInit {
     province: new FormControl(),
     country: new FormControl(),
     checklist: new FormControl(),
-    comments : new FormControl(),
-    contributor: new FormControl()
+    comments : new FormControl()
   });
 
   constructor(private activatedRoute: ActivatedRoute,

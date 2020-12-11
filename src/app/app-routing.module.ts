@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'users', loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule) },
   { path: 'typeupload', loadChildren: () => import('./pages/typeuploads/typeuploads.module').then(m => m.TypeUploadsModule) },
   { path: 'orders', loadChildren: () => import('./pages/orders/orders.module').then(m => m.OrdersModule) },
+  { path: 'myorders', loadChildren: () => import('./pages/myorder/myorder.module').then(m => m.MyorderModule) },
   { path: '**', component: ErrorPageComponent }
 ];
 

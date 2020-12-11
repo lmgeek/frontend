@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiEndpoint: "http://localhost:8081/",
+  apiEndpoint: "https://gallerybackend.herokuapp.com/",
   credentialsAppUser: "2",
   credentialsAppPassword: "OHN3i5B9sygglFkPxwSK8spX8Cm23A8HwVjnFEKo",
   mapbox: {

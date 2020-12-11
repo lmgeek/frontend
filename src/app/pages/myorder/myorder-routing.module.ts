@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateComponent } from '../orders/create/create.component';
-import { ListComponent } from '../orders/list/list.component';
-import { ShowComponent } from '../orders/show/show.component';
+import { ListComponent } from './list/list.component';
+import { ShowComponent } from './show/show.component';
 import { UpdateComponent } from './update/update.component';
 
 
 
 const routes: Routes = [
-  {
-    path: 'create',
-    component: CreateComponent
-  },
+
   {
     path: 'show/:id',
     component: ShowComponent
@@ -31,5 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class OrdersRoutingModule { }
-
+export class MyorderRoutingModule { }
