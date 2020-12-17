@@ -16,7 +16,7 @@
                         <form [formGroup]="form" class="form mt-4" (submit)="submit()">
                             <div class="row" style="margin-bottom: 10px">
                                 <div class="col">
-                                    <input type="text" formControlName="companyName" class="form-control" placeholder="Company Name">
+                                    <input type="text" formControlName="companyName" class="form-control" placeholder="Company Name" required>
                                 </div>
                                 <div class="col">
                                     <input type="text" formControlName="referenceName" class="form-control" placeholder="Reference Name">
@@ -63,6 +63,20 @@
                                     <textarea formControlName="comments"  class="form-control" id="" cols="10" rows="10" placeholder="Comments"></textarea>
                                 </div>
                             </div>
+                            <div class="row" style="margin: 10px 5px">
+                                <div class="files" id="file">
+                                    <label for="file">Upload to gallery</label>
+                                    <input 
+                                        formControlName="file"
+                                        id="file" 
+                                        type="file" 
+                                        class="form-control"
+                                        multiple="" 
+                                        (change)="onFileChange($event)">
+                                    </div>
+                                <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+                            </div>
+                            <br>
                             <br>
                             <button class="btn btn-primary">Submit</button>
                             <button class="btn ml-1 iq-bg-danger">cancel</button>

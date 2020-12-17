@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PluginsService } from 'src/app/plugins.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-update',
@@ -36,13 +37,15 @@ export class UpdateComponent implements OnInit {
     this.filedata = e.target.files[0];
   }
   images = [];
-  
+  modalRef: BsModalRef;
+
   constructor(private activatedRoute: ActivatedRoute,
     private http: HttpClient,
     private router: Router,
     private fb: FormBuilder,
     private authservice: AuthService,
-    private plugins: PluginsService) { }
+    private plugins: PluginsService,
+    private modalService: BsModalService) { }
     
     ngOnInit(): void {
       
@@ -132,6 +135,15 @@ export class UpdateComponent implements OnInit {
       
       
     }
+
+    openModal(template: TemplateRef<any>) {
+      this.modalRef = this.modalService.show(
+        template,
+        Object.assign({}, { class: 'compose-popup modal-sticky-bottom-right modal-sticky-lg', id: 'compose-email-popup' })
+      );
+    }
+
+    
     
   }
   

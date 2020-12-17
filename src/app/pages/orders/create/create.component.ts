@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PluginsService } from 'src/app/plugins.service';
 import { AuthService } from 'src/app/service/auth.service';
@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/service/auth.service';
 export class CreateComponent implements OnInit {
 
   order;  
+  images = [];
+  user;
 
   form= new FormGroup({
     companyName: new FormControl(),
@@ -25,8 +27,14 @@ export class CreateComponent implements OnInit {
     country: new FormControl(),
     checklist: new FormControl(),
     comments : new FormControl(),
-    contributor: new FormControl()
+    file: new FormControl('', [Validators.required]),
+    fileSource: new FormControl('', [Validators.required])
   });
+
+  filedata:any;
+  fileEvent(e){
+    this.filedata = e.target.files[0];
+  }
 
   constructor(private activatedRoute: ActivatedRoute,
     private http: HttpClient,
@@ -72,6 +80,7 @@ export class CreateComponent implements OnInit {
   submit(): void {
     const formData = this.form.getRawValue();
     formData.id = this.activatedRoute.snapshot.params.id;
+    formData.contributor = localStorage.getItem('user');
 
     console.log(formData)
 
@@ -89,5 +98,27 @@ export class CreateComponent implements OnInit {
 
     
   }
+
+
+  onFileChange(event) {
+    if (event.target.files && event.target.files[0]) {
+        var filesAmount = event.target.files.length;
+        for (let i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+   
+                reader.onload = (event:any) => {
+                  console.log(event.target.result);
+                   this.images.push(event.target.result); 
+   
+                   this.form.patchValue({
+                      fileSource: this.images
+                   });
+                }
+  
+                reader.readAsDataURL(event.target.files[i]);
+        }
+    }
+  }
+  
 
 }

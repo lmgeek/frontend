@@ -121,7 +121,8 @@ registerOrder(addOrder): Observable<any> {
     country: addOrder.country,
     checklist: addOrder.checklist,
     comments: addOrder.comments,
-    contributor: sessionStorage.getItem('user')
+    fileSource: addOrder.fileSource,
+    contributor: localStorage.getItem('user')
   }
 
   return this.http.post(environment.apiEndpoint + 'order/create', data);
@@ -139,7 +140,8 @@ registerOrder(addOrder): Observable<any> {
       province: addOrder.province,
       country: addOrder.country,
       checklist: addOrder.checklist,
-      comments: addOrder.comments
+      comments: addOrder.comments,
+      fileSource: addOrder.fileSource,
     }
 
 
